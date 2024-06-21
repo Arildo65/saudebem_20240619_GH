@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Consulta</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body class="fundo">
+
+<form id="formulario">
+    <div><h1>Agende a consulta</h1></div>
+    <input type="text" class="dataHora" placeholder="Data e hora" name="dataHora">
+    <input type="text" class="pacienteId" placeholder="Id do Paciente" name="pacienteId">
+    <input type="text" class="medicoId" placeholder="Id do Médico" name="medicoId">
+    <input type="button" value="Enviar" onclick="submitForm()">
+</form>
+
+<script>
+    function submitForm() {
+        const form = document.getElementById('formulario');
+        const data = {
+            dataHora: form.dataHora.value,
+            pacienteId: form.pacienteId.value,
+            medicoId: form.medicoId.value
+
+        };
+
+        fetch('http://localhost:8080/consultas', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na requisição: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Sucesso:', data);
+                alert('Consulta agendada com sucesso!');
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Ocorreu um erro ao agendar a consulta.');
+            });
+    }
+</script>
+
+</body>
+</html>

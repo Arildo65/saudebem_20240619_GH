@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alteração de Cadastro de Médico</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="fundo">
+
+<form id="formulario">
+    <div><h1>Digite o Id</h1></div>
+    <input type="text" id="id" class="id" placeholder="Id" name="id">
+    <input type="text" id="nome" class="nome" placeholder="Nome" name="nome">
+    <input type="text" id="cpf" class="cpf" placeholder="CPF" name="cpf">
+    <input type="text" id="endereco" class="endereco" placeholder="Endereço" name="endereco">
+    <input type="number" id="idade" class="idade" placeholder="Idade" name="idade">
+    <input type="text" id="telefone" class="telefone" placeholder="Telefone" name="telefone">
+    <input type="text" id="crm" class="crm" placeholder="CRM" name="crm">
+    <input type="text" id="especialidade" class="especialidade" placeholder="Especialidade" name="especialidade">
+    <input type="button" value="Enviar" onclick="submitForm()">
+</form>
+
+<script>
+    function submitForm() {
+        const form = document.getElementById('formulario');
+        const id = form.id.value;
+        const data = {
+            nome: form.nome.value,
+            cpf: form.cpf.value,
+            endereco: form.endereco.value,
+            idade: form.idade.value,
+            telefone: form.telefone.value,
+            crm: form.crm.value,
+            especialidade: form.especialidade.value
+        };
+
+        fetch(`http://localhost:8080/medicos/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na requisição: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Sucesso:', data);
+                alert('Cadastro alterado com sucesso!');
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Ocorreu um erro ao alterar o cadastro.');
+            });
+    }
+</script>
+
+</body>
+</html>
