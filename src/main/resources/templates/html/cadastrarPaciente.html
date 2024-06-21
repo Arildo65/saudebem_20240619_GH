@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Paciente</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body class="fundo">
+
+<form id="formulario">
+    <div><h1>Cadastre-se</h1></div>
+    <input type="text" class="nome" placeholder="Nome" name="nome">
+    <input type="text" class="cpf" placeholder="CPF" name="cpf">
+    <input type="text" class="endereco" placeholder="Endereço" name="endereco">
+    <input type="number" class="idade" placeholder="Idade" name="idade">
+    <input type="text" class="telefone" placeholder="Telefone" name="telefone">
+    <input type="text" class="convenio" placeholder="Convênio" name="convenio">
+    <input type="button" value="Enviar" onclick="submitForm()">
+</form>
+
+<script>
+    function submitForm() {
+        const form = document.getElementById('formulario');
+        const data = {
+            nome: form.nome.value,
+            cpf: form.cpf.value,
+            endereco: form.endereco.value,
+            idade: form.idade.value,
+            telefone: form.telefone.value,
+            convenio: form.convenio.value
+        };
+
+        fetch('http://localhost:8080/pacientes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na requisição: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Sucesso:', data);
+                alert('Paciente cadastrado com sucesso!');
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Ocorreu um erro ao cadastrar o paciente.');
+            });
+    }
+</script>
+
+</body>
+</html>
