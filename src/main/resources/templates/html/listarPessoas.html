@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Pessoas</title>
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+</head>
+<body class="fundo">
+
+<form id="formulario">
+    <div><h1>Clique em "enviar"</h1></div>
+    <input type="button" value="Enviar" onclick="submitForm()">
+</form>
+
+<script>
+    function submitForm() {
+        console.log("Botão clicado");
+
+
+
+        fetch('http://localhost:8080/pessoas', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+
+            .then(response => {
+                console.log("Resposta recebida");
+                if (!response.ok) {
+                    throw new Error('Erro na requisição: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Sucesso:', data);
+                alert('Lista de pessoas cadastradas:');
+                displayData(data);
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Ocorreu um erro ao listar pessoas.');
+            });
+    }
+    function displayData(data) {
+        const body = document.body;
+        const list = document.createElement('ul');
+        data.forEach(person => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Nome: ${person.nome}, CPF: ${person.cpf}, Endereço: ${person.endereco}, Idade: ${person.idade}, Telefone: ${person.telefone}, Convênio: ${person.convenio || 'N/A'}, CRM: ${person.crm || 'N/A'}, Especialidade: ${person.especialidade
+            || 'N/A'}`;
+            list.appendChild(listItem);
+        });
+        body.appendChild(list);
+    }
+</script>
+
+</body>
+</html>
