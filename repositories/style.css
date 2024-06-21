@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+
+}
+
+html,
+body{
+    max-width:100%;
+
+}
+
+header{
+height: 200px;
+margin: 0;
+background-color: aquamarine;
+margin-bottom: 20px;
+}
+
+
+ header>h1{
+    padding-top: 20px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.658);
+    font-size: 50px;
+}
+
+section{
+    background-color: rgb(43, 209, 168);
+    padding: 40px;
+
+}
+
+.doctor{
+
+    display: inline-block;
+    border-radius: 10px 10px 0 0;
+    margin-left: 78px;
+    margin-bottom: 50px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.418);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.349);
+    text-align: center;
+    color: aliceblue;
+    text-shadow: 3px 1px 1px rgba(0, 0, 0, 0.459);
+
+
+}
+.doctor {
+    border: 1px solid white;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    image-rendering: optimizeQuality;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botão{
+    padding: 10px;
+    background-image: linear-gradient( to top right, rgba(36, 197, 109, 0.76), rgba(28, 171, 228, 0.918));
+    border-radius: 20px;
+    border: none;
+    color: white;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.363);
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+    text-shadow: none;
+}
+
+.botão:hover{
+    background-color: blue;
+}
+
+footer{
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.459);
+
+}
+/* estilo da página "login" */
+
+.fundo{
+    height: 100vh;
+    padding: 100px;
+    background-image: linear-gradient(to bottom left ,rgb(0, 255, 128), rgba(0, 204, 255, 0.788));
+    
+}
+
+
+#formulario{
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.363);
+    padding-top:20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    width: 350px;
+    height: 400;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.616);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.397);
+}
+
+#formulario:hover{
+    border: 1px solid rgb(207, 191, 191);
+}
+
+#formulario > div{
+    padding-bottom: 30px;
+    
+}
+
+#formulario > div > h1 {
+    text-align: center;
+    color: white;
+    text-decoration: solid;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.637);
+    
+}
+#formulario > input{
+    display: inline;
+    margin-left:85px;
+    margin-bottom: 3px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.397); 
+    background-color: rgba(255, 255, 255, 0.726); 
+}
+
+.senha{
+    margin-bottom: 5px;
+    color: black;
+}
+ #buto{
+    width: 70px;
+    height: 30px;
+    display: block;
+    font-size: 16px;
+    border-radius: 10px;
+    margin: 8px 0  10px 140px;
+    text-align: center;
+    padding: 2px 5px 1px 5px;
+    background-image: linear-gradient( to top right, rgba(36, 197, 109, 0.76), rgba(28, 171, 228, 0.918)) ;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.473);
+    color: white;
+    cursor: pointer;
+ } 
+
+ a{
+    text-decoration: none;
+    color: aliceblue;
+    
+ }
+
+ /* estilo da pagina main*/ 
+
+
+ .h1principal{
+    margin-bottom: 0;
+    background-image: linear-gradient( to top left, rgba(36, 197, 109, 0.76), rgba(28, 171, 228, 0.918)) ;
+
+ }
+
+ .conteudo{
+    margin-top: 50px;
+    text-align: justify;
+    text-align: center;
+ }
+
+ .meio{
+    background-color: aquamarine ;
+    padding: 50px;
+ }
+
+ h2{
+    text-align: center;
+    padding-bottom: 20px;
+ }
+ .dotormain{
+   right: 50px;
+ 
+ }
+
+
+ nav{
+    padding: 10px;
+    margin-bottom: 70px;
+    background-color: rgba(0, 0, 0, 0.411);
+
+ }
+
+
+
+ nav > a{
+    color: rgb(255, 255, 255);
+    padding: 20px;
+   
+ }
+
+ nav >a:hover{
+   color: black;
+   
+   
+ }
+ .rodapeprincipal{
+    background-color: rgba(0, 0, 0, 0.774);
+    height: 70px;
+    text-align: center;
+    color: white;
+    margin-top: 70px;
+ }
+ .rodapeprincipal > p{
+    padding-top: 20px;
+ }
+
+ /* estilo do calendario*/
+ .calendario{
+    max-width: 760px;
+    background-image: linear-gradient( to top right, rgba(36, 197, 109, 0.76), rgba(28, 171, 228, 0.918));
+    margin: 10px auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.445);
+    border-radius: 20px;
+ }
+ .mes-anterior{
+    opacity: 58%;
+    box-sizing: border-box;
+    background-color: white;
+ }
+
+ .dias-semanas{
+    color: white;
+    display: flex;
+    background-color:rgba(0, 0, 0, 0.432) ;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+   
+ }
+
+ .dias-semanas span{
+    display: inline-block;
+    width: 14.2%;
+
+ }
+
+ .dias-mes{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    
+    
+    
+
+ }
+
+ .dias-mes span{
+    display: inline-block;
+    width: 14.2%;
+    margin-bottom:8px;
+    background-color: aliceblue;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.445);
+    
+   
+
+ }
+
+ .dias-mes span p{
+    background-color: white;
+    padding: 5px;
+  
+ }
+
+ .dia{
+    color:white;
+ }
+    
+ 
